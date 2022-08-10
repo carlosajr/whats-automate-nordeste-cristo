@@ -9,18 +9,7 @@ const reasons = require('./assets/json/reasons.json');
 const already = require('./assets/json/already.json');
 
 const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: {
-        args: [
-            '--disable-gpu',
-            '--disable-dev-shm-usage',
-            '--disable-setuid-sandbox',
-            '--no-first-run',
-            '--no-sandbox',
-            '--no-zygote',
-            '--single-process',
-        ]
-    }
+    authStrategy: new LocalAuth()
 });
 
 client.on('qr', (qr) => {
